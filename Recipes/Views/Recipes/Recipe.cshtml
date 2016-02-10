@@ -1,0 +1,28 @@
+﻿@model Recipes.Models.RecipeInfo
+@{
+    ViewBag.Title = "Recipe" + ViewBag.RecipeName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(m => m.Name)</h2>
+<div class="row">
+    <table class="col-md-2">
+        <tr>
+            <th><h3>Ingredients</h3></th>
+        </tr>
+        @foreach (var ing in Model.Ingredients)
+        {
+            <tr>
+                <th>  @Html.DisplayName(ing.Measurement) @Html.DisplayName(ing.Unit) @Html.DisplayName(ing.IngredientName) </th>
+            </tr>
+        }
+    </table>
+    <div class="col-md-4">
+        <br /><br />
+        <p>This is where the instructions will go. I am just filling in a bunch of text here for now. </p>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
